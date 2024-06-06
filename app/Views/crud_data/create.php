@@ -119,7 +119,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material mx-2" action="" method="post">
+                            <form class="form-horizontal form-material mx-2" action="<?= base_url('data-criteria/store') ?>" method="post">
                                 <div class="form-group">
                                     <label for="nama_router" class="form-label">Nama Router</label>
                                     <input type="text" class="form-control" id="nama_router" name="nama_router" required>

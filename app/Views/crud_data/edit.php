@@ -116,77 +116,72 @@
 
                     <!-- Column -->
                     <!-- Column -->
-                    <?php foreach ($router as $data) : ?>
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material mx-2" action="<?= base_url('/spk_router/edit/' . $data['id_router']) ?>" method="post">
-                                    <div class="form-group">
-                                        <label for="id_router" class="form-label">ID Router</label>
-                                        <input type="text" class="form-control" id="id_router" name="id_router" value="<?= $data['id_router'] ?>" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nama_router" class="form-label">Nama Router</label>
-                                        <input type="text" class="form-control" id="nama_router" name="nama_router" value="<?= $data['nama_router'] ?>" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="harga_router" class="form-label">Harga Router</label>
-                                        <input type="number" class="form-control" id="harga_router" name="harga_router" value="<?= $data['harga_router'] ?>" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="freq_router" class="form-label">Frekuensi</label>
-                                        <select class="form-control" id="freq_router" name="freq_router" required>
-                                            <?php foreach (['650MHz', '716MHz', '800MHz', '864MHz'] as $freq) : ?>
-                                                <option value="<?= $freq ?>" <?= $data['freq_router'] == $freq ? 'selected' : '' ?>><?= $freq ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jml_port_router" class="form-label">Jumlah Port Ethernet</label>
-                                        <input type="number" class="form-control" id="jml_port_router" name="jml_port_router" value="<?= $data['jml_port_router'] ?>" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="port_sfp_router" class="form-label">Port SFP</label>
-                                        <select class="form-control" id="port_sfp_router" name="port_sfp_router" required>
-                                            <option value="Tidak Ada" <?= $data['port_sfp_router'] == 'Tidak Ada' ? 'selected' : '' ?>>Tidak Ada</option>
-                                            <option value="Ada" <?= $data['port_sfp_router'] == 'Ada' ? 'selected' : '' ?>>Ada</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="wlan_tech_router" class="form-label">Teknologi WLAN</label>
-                                        <select class="form-control" id="wlan_tech_router" name="wlan_tech_router" required>
-                                            <?php foreach (['802.11b/g/n', '802.11a/n/ac', '802.11b/g/n/a.x'] as $tech) : ?>
-                                                <option value="<?= $tech ?>" <?= $data['wlan_tech_router'] == $tech ? 'selected' : '' ?>><?= $tech ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jml_wlan_router" class="form-label">Jumlah WLAN</label>
-                                        <input type="number" class="form-control" id="jml_wlan_router" name="jml_wlan_router" value="<?= $data['jml_wlan_router'] ?>" required>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="ram_router" class="form-label">RAM</label>
-                                        <select class="form-control" id="ram_router" name="ram_router" required>
-                                            <?php foreach (['32MB', '64MB', '128MB', '256MB', '1 GB'] as $ram) : ?>
-                                                <option value="<?= $ram ?>" <?= $data['ram_router'] == $ram ? 'selected' : '' ?>><?= $ram ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success text-white" type="submit">Submit</button>
-                                            <!-- <button class="btn btn-secondary text-white" onclick="confirmGoBack();">Cancel</button> -->
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-secondary text-white" onclick="confirmGoBack();">Cancel</button>
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form-horizontal form-material mx-2" action="<?= base_url('data-criteria/update/' . $router['id_router']) ?>" method="post">
+                                <div class="form-group">
+                                    <label for="nama_router" class="form-label">Nama Router</label>
+                                    <input type="text" class="form-control" id="nama_router" name="nama_router" value="<?= $router['nama_router'] ?>" required>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label for="harga_router" class="form-label">Harga Router</label>
+                                    <input type="number" class="form-control" id="harga_router" name="harga_router" value="<?= $router['harga_router'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="freq_router" class="form-label">Frekuensi</label>
+                                    <select class="form-control" id="freq_router" name="freq_router" required>
+                                        <option value="">Pilih Frekuensi</option>
+                                        <?php foreach (['650MHz', '716MHz', '800MHz', '864MHz'] as $freq) : ?>
+                                            <option value="<?= $freq ?>" <?= ($freq === $router['freq_router']) ? 'selected' : '' ?>><?= $freq ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jml_port_router" class="form-label">Jumlah Port Ethernet</label>
+                                    <input type="number" class="form-control" id="jml_port_router" name="jml_port_router" value="<?= $router['jml_port_router'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="port_sfp_router" class="form-label">Port SFP</label>
+                                    <select class="form-control" id="port_sfp_router" name="port_sfp_router" required>
+                                        <option value="">Pilih Opsi</option>
+                                        <option value="Tidak Ada" <?= ($router['port_sfp_router'] === 'Tidak Ada') ? 'selected' : '' ?>>Tidak Ada</option>
+                                        <option value="Ada" <?= ($router['port_sfp_router'] === 'Ada') ? 'selected' : '' ?>>Ada</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12" for="wlan_tech_router">Teknologi Wireless</label>
+                                    <select class="form-control" id="wlan_tech_router" name="wlan_tech_router" required>
+                                        <option value="802.11b/g/n" <?= ($router['wlan_tech_router'] === '802.11b/g/n') ? 'selected' : '' ?>>802.11b/g/n</option>
+                                        <option value="802.11a/n/ac" <?= ($router['wlan_tech_router'] === '802.11a/n/ac') ? 'selected' : '' ?>>802.11a/n/ac</option>
+                                        <option value="802.11b/g/n/ax" <?= ($router['wlan_tech_router'] === '802.11b/g/n/ax') ? 'selected' : '' ?>>802.11b/g/n/ax</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jml_wlan_router" class="form-label">Jumlah WLAN</label>
+                                    <input type="number" class="form-control" id="jml_wlan_router" name="jml_wlan_router" value="<?= $router['jml_wlan_router'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ram_router" class="form-label">RAM</label>
+                                    <select class="form-control" id="ram_router" name="ram_router" required>
+                                        <option value="">Pilih RAM</option>
+                                        <option value="32MB" <?= ($router['ram_router'] === '32MB') ? 'selected' : '' ?>>32MB</option>
+                                        <option value="64MB" <?= ($router['ram_router'] === '64MB') ? 'selected' : '' ?>>64MB</option>
+                                        <option value="128MB" <?= ($router['ram_router'] === '128MB') ? 'selected' : '' ?>>128MB</option>
+                                        <option value="256MB" <?= ($router['ram_router'] === '256MB') ? 'selected' : '' ?>>256MB</option>
+                                        <option value="1 GB" <?= ($router['ram_router'] === '1 GB') ? 'selected' : '' ?>>1 GB</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success text-white" type="submit">Submit</button>
+                                        <a href="<?= base_url('data-criteria') ?>" class="btn btn-secondary text-white">Cancel</a>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+
                     <!-- Column -->
                 </div>
                 <!-- ============================================================== -->

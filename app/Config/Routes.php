@@ -25,8 +25,13 @@ $routes->get('data-criteria', 'DashboardController::dataCriteria');
 
 // Rute add-form-data-criteria
 $routes->get('data-criteria/add-data', 'SpkRouterController::create');
+$routes->post('data-criteria/store', 'SpkRouterController::store');
+
 // Rute edit-form-data-criteria
-$routes->get('data-criteria/(:segment)/edit/', 'SpkRouterController::edit/$1');
+$routes->get('data-criteria/edit/(:num)', 'SpkRouterController::edit/$1');
+$routes->post('data-criteria/update/(:num)', 'SpkRouterController::update/$1');
+$routes->get('data-criteria/delete/(:num)', 'SpkRouterController::delete/$1');
+
 
 // Rute Process-DSS
 $routes->get('process-dss', 'DashboardController::processDss');

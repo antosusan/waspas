@@ -188,12 +188,12 @@
                                                 <td><?= esc($router['jml_wlan_router']) ?></td>
                                                 <td><?= esc($router['ram_router']) ?></td>
                                                 <td> <span class="action-icons active">
-                                                        <a onclick="window.location.href='data-criteria/edit';" href="data-criteria/edit">
+                                                        <a href=" <?= base_url('data-criteria/edit/' . $router['id_router']) ?>">
                                                             <i class="ti-pencil-alt"></i>
                                                         </a>
                                                     </span>
                                                     <span class="action-icons active">
-                                                        <a href="javascript:void(0)">
+                                                        <a href="<?= base_url('data-criteria/delete/' . $router['id_router']) ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus router ini?');">
                                                             <i class="ti-trash icon-red" style="color: red;"></i>
                                                         </a>
                                                     </span>
