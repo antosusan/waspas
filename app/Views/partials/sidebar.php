@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/process-dss" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/process-dss" aria-expanded="false" href="/process-dss/hitung">
                         <i class="mdi mdi-arrange-bring-forward"></i>
                         <span class="hide-menu">Process DSS</span>
                     </a>

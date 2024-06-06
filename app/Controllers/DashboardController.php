@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\SpkRouterModel;
+use App\Models\SpkPakar;
+
 
 class DashboardController extends BaseController
 {
@@ -23,7 +25,11 @@ class DashboardController extends BaseController
     }
     public function processDss()
     {
-        return view('processDss');
+        $pakarModel = new SpkPakar();
+        $data['pakar'] = $pakarModel->findAll();
+        return view('processDss', $data);
+        $spkRouterModel = new SpkRouterModel();
+        $data['routers'] = $spkRouterModel->hitungNilai();
     }
     public function output()
     {

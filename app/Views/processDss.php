@@ -145,43 +145,80 @@
                 <!-- ============================================================== -->
 
                 <!-- column -->
-                <!-- ============================================================== -->
-                <!-- End Container fluid  -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- footer -->
-                <!-- ============================================================== -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" action="<?= base_url('process-dss/hitung') ?>" method="post">
+                            <h4 class="card-title">Responsive tables</h4>
 
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-responsive-lg">
+                                    <thead>
+                                        <tr>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Pakar</th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Frekuensi</th>
+                                            <th scope="col">Jumlah Port</th>
+                                            <th scope="col">Port SFP</th>
+                                            <th scope="col">Teknologi WLAN</th>
+                                            <th scope="col">Jumlah WLAN</th>
+                                            <th scope="col">RAM</th>
+                                        </tr>
+                                    </thead>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (!empty($pakar) && is_array($pakar)) : ?>
+                                            <?php foreach ($pakar as $p) : ?>
+                                                <tr>
+                                                    <td><?= esc($p['id_pakar']) ?></td>
+                                                    <td><?= esc($p['nama']) ?></td>
+                                                    <td><?= esc($p['p1']) ?></td>
+                                                    <td><?= esc($p['p2']) ?></td>
+                                                    <td><?= esc($p['p3']) ?></td>
+                                                    <td><?= esc($p['p4']) ?></td>
+                                                    <td><?= esc($p['p5']) ?></td>
+                                                    <td><?= esc($p['p6']) ?></td>
+                                                    <td><?= esc($p['p7']) ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <tr>
+                                                <td colspan="10">No data found</td>
+                                            </tr>
+                                        <?php endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ============================================================== -->
-                <!-- End footer -->
+                <!-- End Page wrapper  -->
                 <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Page wrapper  -->
+            <!-- End Wrapper -->
             <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Wrapper -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- All Jquery -->
-        <!-- ============================================================== -->
-        <script src=<?= base_url('assets/libs/jquery/dist/jquery.min.js') ?>></script>
-        <!-- Bootstrap tether Core JavaScript -->
-        <script src=<?= base_url('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.j') ?>></script>
-        <!-- slimscrollbar scrollbar JavaScript -->
-        <script src=<?= base_url('assets/extra-libs/sparkline/sparkline.js') ?>></script>
-        <!--Wave Effects -->
-        <script src=<?= base_url('dist/js/waves.js') ?>></script>
-        <!--Menu sidebar -->
-        <script src=<?= base_url('dist/js/sidebarmenu.js') ?>></script>
-        <!--Custom JavaScript -->
-        <script src=<?= base_url('dist/js/custom.min.js') ?>></script>
-        <!--This page JavaScript -->
-        <!--chartis chart-->
-        <script src=<?= base_url('assets/libs/chartist/dist/chartist.min.js') ?>></script>
-        <script src=<?= base_url('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') ?>></script>
-        <script src=<?= base_url('dist/js/pages/dashboards/dashboard1.js') ?>></script>
+            <!-- ============================================================== -->
+            <!-- All Jquery -->
+            <!-- ============================================================== -->
+            <script src=<?= base_url('assets/libs/jquery/dist/jquery.min.js') ?>></script>
+            <!-- Bootstrap tether Core JavaScript -->
+            <script src=<?= base_url('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.j') ?>></script>
+            <!-- slimscrollbar scrollbar JavaScript -->
+            <script src=<?= base_url('assets/extra-libs/sparkline/sparkline.js') ?>></script>
+            <!--Wave Effects -->
+            <script src=<?= base_url('dist/js/waves.js') ?>></script>
+            <!--Menu sidebar -->
+            <script src=<?= base_url('dist/js/sidebarmenu.js') ?>></script>
+            <!--Custom JavaScript -->
+            <script src=<?= base_url('dist/js/custom.min.js') ?>></script>
+            <!--This page JavaScript -->
+            <!--chartis chart-->
+            <script src=<?= base_url('assets/libs/chartist/dist/chartist.min.js') ?>></script>
+            <script src=<?= base_url('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') ?>></script>
+            <script src=<?= base_url('dist/js/pages/dashboards/dashboard1.js') ?>></script>
 </body>
 
 </html>

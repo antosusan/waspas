@@ -35,7 +35,7 @@ $routes->get('data-criteria/delete/(:num)', 'SpkRouterController::delete/$1');
 
 // Rute Process-DSS
 $routes->get('process-dss', 'DashboardController::processDss');
-
+$routes->get('process-dss/hitung', 'SpkRouterController::hitung');
 // Rute Output
 $routes->get('output', 'DashboardController::output');
 // Rute form-data-criteria

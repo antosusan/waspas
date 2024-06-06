@@ -78,4 +78,9 @@ class SpkRouterController extends Controller
 
         return redirect()->to('/data-criteria');
     }
+    public function hitung($id)
+    {
+        $routerModel = new SpkRouterModel();
+        $routerModel->hitungNilai($id);
+    }
 }
